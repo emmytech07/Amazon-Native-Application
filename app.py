@@ -41,7 +41,7 @@ wait = WebDriverWait(driver, 10)
 wait.until(EC.element_to_be_clickable((By.ID, 'com.amazon.mShop.android.shopping:id/rs_search_src_text')))
 
 driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/rs_search_src_text").send_keys("bags")
-sl.sleep(3)
+sl.sleep(5)
 el6 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/chrome_action_bar_search_icon")
 el6.click()
 driver.press_keycode(66)
