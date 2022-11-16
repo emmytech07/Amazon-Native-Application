@@ -1,3 +1,4 @@
+import uiautomator
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -21,7 +22,11 @@ sl.sleep(10)
 el1 = driver.find_element(by=AppiumBy.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.ViewAnimator/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.widget.TextView")
 el1.click()
 sl.sleep(3)
-el3 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/skip_sign_in_button")
+
+# Using UIAutomator(Java Function)
+el3=driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Skip sign in")')
+
+# el3 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/skip_sign_in_button")
 el3.click()
 sl.sleep(2)
 driver.find_element(By.CLASS_NAME, "android.widget.TextView").click()
