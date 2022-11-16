@@ -1,4 +1,7 @@
 from appium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from appium.webdriver.appium_service import AppiumService
 from appium.webdriver.common.appiumby import By, AppiumBy
 import time as sl
@@ -23,7 +26,14 @@ el3.click()
 sl.sleep(2)
 driver.find_element(By.CLASS_NAME, "android.widget.TextView").click()
 # el5.clear()
+wait = WebDriverWait(driver, 10)
+wait.until(EC.element_to_be_clickable((By.ID, 'com.amazon.mShop.android.shopping:id/rs_search_src_text')))
+
 driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/rs_search_src_text").send_keys("bags")
 sl.sleep(3)
 el6 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/chrome_action_bar_search_icon")
 el6.click()
+driver.press_keycode(66)
+driver.hide_keyboard()
+sl.sleep(10)
+driver.quit()
