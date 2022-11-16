@@ -12,3 +12,18 @@ desired_caps = dict(
 
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 driver.implicitly_wait(5)
+sl.sleep(10)
+# driver.find_element(By.ID, "micp-aww-close").click()
+
+el1 = driver.find_element(by=AppiumBy.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.ViewAnimator/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.widget.TextView")
+el1.click()
+sl.sleep(3)
+el3 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/skip_sign_in_button")
+el3.click()
+sl.sleep(2)
+driver.find_element(By.CLASS_NAME, "android.widget.TextView").click()
+# el5.clear()
+driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/rs_search_src_text").send_keys("bags")
+sl.sleep(3)
+el6 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/chrome_action_bar_search_icon")
+el6.click()
