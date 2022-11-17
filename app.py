@@ -28,7 +28,7 @@ el3=driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Sk
 
 # el3 = driver.find_element(by=AppiumBy.ID, value="com.amazon.mShop.android.shopping:id/skip_sign_in_button")
 el3.click()
-sl.sleep(10)
+sl.sleep(5)
 
 # Scroll down to element and click (Shop holiday gifts)
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Shop holiday gifts").instance(0))').click()
